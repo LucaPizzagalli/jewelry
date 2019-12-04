@@ -1,145 +1,173 @@
-<font rwr="1" style="font-family:Arial" size="4">
-    <div id="pagewrap">
-        <header>
-            <h1>3 Column Responsive Layout</h1>
-        </header>
-        <section id="content">
-            <h2>Column 1</h2>
-        </section>
-        <section id="middle">
-            <h2>Column 2</h2>
-        </section>
-        <aside id="sidebar">
-            <h2>Column 3</h2>
-        </aside>
-        <footer>
-            <h4>Footer</h4>
-            <p>Footer text</p>
-        </footer>
-    </div>
-    <style>
-        #pagewrap {
-            padding: 5px;
-            width: 960px;
-            margin: 20px auto;
-        }
+<html>
+<div id="pagewrap">
+    <header>
+        <div class="portrait">
+            <img src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/logo.jpg"
+                alt="I Sella logo">
+        </div>
+    </header>
+    <section>
+        <p>
+            I Sella Bottega Orafa
+            Via Fratelli Cairoli 59
+            23900 Lecco
+            Lago di Como Italy
+            gioielleriasella@gmail.com
+            +39 0341 368613
+            Facebook: iSella Bottega Orafa
+            (Foto di famiglia)
 
-        header {
-            height: 100px;
-            padding: 0 15px;
+            La Bottega orafa della famiglia Sella nasce a Lecco nel 1983
+            Attualmente vi operano i fondatori Corrado e Margherita Sella e il figlio Federico che è anche un apprezzato
+            musicista (vedi 7th Break e Settima Pausa)
+            Tutti i lavori esposti nel loro atelier sono realizzati in proprio.
+            Corrado Sella : orafo e disegno (foto)
+            Federico Sella : orafo e disegno (foto)
+            Margherita Sella : progettazione (foto)
+            (foto della modella)
+        </p>
+    </section>
+    <section id="content">
+        <h2>Column 1</h2>
+    </section>
+    <section id="middle">
+        <h2>Column 2</h2>
+    </section>
+    <aside id="sidebar">
+        <h2>Column 3</h2>
+    </aside>
+    <footer>
+        <h4>Footer</h4>
+        <p>Footer text</p>
+    </footer>
+</div>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+    img {
+        max-width: 100%;
+    }
+
+    p {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .portrait {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #pagewrap {
+        padding: 5px;
+        width: 960px;
+        margin: 20px auto;
+    }
+
+    header {
+        padding: 0 15px;
+    }
+
+    #content {
+        width: 290px;
+        float: left;
+        padding: 5px 15px;
+    }
+
+    #middle {
+        width: 294px;
+        float: left;
+        padding: 5px 15px;
+        margin: 0px 5px 5px 5px;
+    }
+
+    #sidebar {
+        width: 270px;
+        padding: 5px 15px;
+        float: left;
+    }
+
+    footer {
+        clear: both;
+        padding: 0 15px;
+    }
+
+    /* for 980px or less */
+    @media screen and (max-width: 980px) {
+        #pagewrap {
+            width: 94%;
         }
 
         #content {
-            width: 290px;
-            float: left;
-            padding: 5px 15px;
+            width: 41%;
+            padding: 1% 4%;
         }
 
         #middle {
-            width: 294px;
-            float: left;
-            padding: 5px 15px;
-            margin: 0px 5px 5px 5px;
+            width: 41%;
+            padding: 1% 4%;
+            margin: 0px 0px 5px 5px;
+            float: right;
         }
 
         #sidebar {
-            width: 270px;
-            padding: 5px 15px;
-            float: left;
-        }
-
-        footer {
             clear: both;
-            padding: 0 15px;
-        }
-
-        /* for 980px or less */
-        @media screen and (max-width: 980px) {
-            #pagewrap {
-                width: 94%;
-            }
-
-            #content {
-                width: 41%;
-                padding: 1% 4%;
-            }
-
-            #middle {
-                width: 41%;
-                padding: 1% 4%;
-                margin: 0px 0px 5px 5px;
-                float: right;
-            }
-
-            #sidebar {
-                clear: both;
-                padding: 1% 4%;
-                width: auto;
-                float: none;
-            }
-
-            header,
-            footer {
-                padding: 1% 4%;
-            }
-        }
-
-        /* for 700px or less */
-        @media screen and (max-width: 600px) {
-            #content {
-                width: auto;
-                float: none;
-            }
-
-            #middle {
-                width: auto;
-                float: none;
-                margin-left: 0px;
-            }
-
-            #sidebar {
-                width: auto;
-                float: none;
-            }
-        }
-
-        /* for 480px or less */
-        @media screen and (max-width: 480px) {
-            header {
-                height: auto;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            #sidebar {
-                display: none;
-            }
-        }
-
-        #content {
-            background: #f8f8f8;
-        }
-
-        #sidebar {
-            background: #f0efef;
+            padding: 1% 4%;
+            width: auto;
+            float: none;
         }
 
         header,
-        #content,
-        #middle,
-        #sidebar {
-            margin-bottom: 5px;
-        }
-
-        #pagewrap,
-        header,
-        #content,
-        #middle,
-        #sidebar,
         footer {
-            border: solid 1px #ccc;
+            padding: 1% 4%;
         }
-    </style>
-</font>
+    }
+
+    /* for 700px or less */
+    @media screen and (max-width: 600px) {
+        #content {
+            width: auto;
+            float: none;
+        }
+
+        #middle {
+            width: auto;
+            float: none;
+            margin-left: 0px;
+        }
+
+        #sidebar {
+            width: auto;
+            float: none;
+        }
+    }
+
+    /* for 480px or less */
+    @media screen and (max-width: 480px) {
+        h1 {
+            font-size: 2em;
+        }
+
+        #sidebar {
+            display: none;
+        }
+    }
+
+    #content {
+        background: #f8f8f8;
+    }
+
+    #sidebar {
+        background: #f0efef;
+    }
+
+    #pagewrap,
+    header,
+    #content,
+    #middle,
+    #sidebar,
+    footer {
+        border: solid 1px #ccc;
+    }
+</style>
+
+</html>
