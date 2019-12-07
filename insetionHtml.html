@@ -1,12 +1,28 @@
 <html>
-<div id="pagewrap">
-    <header>
+<div class="cells-container">
+    <!-- <header>
         <div class="portrait">
             <img src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/logo.jpg"
                 alt="I Sella logo">
         </div>
-    </header>
-    <section>
+    </header> -->
+    <div class="flex-cell">
+        <img src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/Rings/Padelli/bigCopperFront.jpg"
+            alt="ring front side" />
+    </div>
+    <div class="flex-cell text-container colored">
+        <p>Orecchini in lastra d’argento 925 millesimi spessore 0,45 circa, realizzati interamente a mano.
+            Tagliati, sbalzati, spazzolati e poi sabbiati,quindi dorati oro giallo o rosè, oppure rodiati in bianco o
+            bruniti al rutenio. Gancio di sicurezza.
+            Diametro 30 mm mod. grande € 70,00</p>
+    </div>
+    <div class="flex-cell">
+        <img src="https://onemanagement.com/assets/2019-05-06/08675660015571538825cd0485ad3d00.png" alt="Model">
+    </div>
+    <div class="flex-cell">
+        <img src="" alt="Model">
+    </div>
+    <div class="flex-cell text-container colored">
         <p>
             I Sella Bottega Orafa
             Via Fratelli Cairoli 59
@@ -18,7 +34,8 @@
             (Foto di famiglia)
 
             La Bottega orafa della famiglia Sella nasce a Lecco nel 1983
-            Attualmente vi operano i fondatori Corrado e Margherita Sella e il figlio Federico che è anche un apprezzato
+            Attualmente vi operano i fondatori Corrado e Margherita Sella e il figlio Federico che è anche un
+            apprezzato
             musicista (vedi 7th Break e Settima Pausa)
             Tutti i lavori esposti nel loro atelier sono realizzati in proprio.
             Corrado Sella : orafo e disegno (foto)
@@ -26,23 +43,42 @@
             Margherita Sella : progettazione (foto)
             (foto della modella)
         </p>
-    </section>
-    <section id="content">
-        <h2>Column 1</h2>
-    </section>
-    <section id="middle">
-        <h2>Column 2</h2>
-    </section>
-    <aside id="sidebar">
-        <h2>Column 3</h2>
-    </aside>
-    <footer>
-        <h4>Footer</h4>
-        <p>Footer text</p>
-    </footer>
+    </div>
+    <div class="flex-cell">
+        <img src="https://i.pinimg.com/originals/52/74/34/52743476f11ac145887d39d269775e05.jpg" alt="The shop">
+    </div>
 </div>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+    .cells-container {
+        padding: 0px;
+        width: 1160px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+        margin: 0 auto;
+    }
+
+
+    .flex-cell {
+        flex-basis: 49%;
+        align-items: stretch;
+    }
+
+    .colored {
+        background-color: #ffBBBB;
+        color: black;
+    }
+
+    .text-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
 
     img {
         max-width: 100%;
@@ -50,48 +86,14 @@
 
     p {
         font-family: 'Open Sans', sans-serif;
+        padding: 10% 10%;
     }
 
-    .portrait {
-        width: 50%;
-        margin: 0 auto;
+    div {
+        border: solid 1px #ff9999;
     }
 
-    #pagewrap {
-        padding: 5px;
-        width: 960px;
-        margin: 20px auto;
-    }
-
-    header {
-        padding: 0 15px;
-    }
-
-    #content {
-        width: 290px;
-        float: left;
-        padding: 5px 15px;
-    }
-
-    #middle {
-        width: 294px;
-        float: left;
-        padding: 5px 15px;
-        margin: 0px 5px 5px 5px;
-    }
-
-    #sidebar {
-        width: 270px;
-        padding: 5px 15px;
-        float: left;
-    }
-
-    footer {
-        clear: both;
-        padding: 0 15px;
-    }
-
-    /* for 980px or less */
+    /* for 980px or less
     @media screen and (max-width: 980px) {
         #pagewrap {
             width: 94%;
@@ -122,7 +124,7 @@
         }
     }
 
-    /* for 700px or less */
+    /* for 700px or less
     @media screen and (max-width: 600px) {
         #content {
             width: auto;
@@ -141,7 +143,7 @@
         }
     }
 
-    /* for 480px or less */
+    /* for 480px or less
     @media screen and (max-width: 480px) {
         h1 {
             font-size: 2em;
@@ -158,16 +160,16 @@
 
     #sidebar {
         background: #f0efef;
-    }
+    } */
 
-    #pagewrap,
+    /* #page,
     header,
     #content,
     #middle,
     #sidebar,
     footer {
         border: solid 1px #ccc;
-    }
+    } */
 </style>
 
 </html>
