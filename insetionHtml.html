@@ -1,4 +1,5 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="main cells-container">
     <div class="flex-cell-base image-container" style="flex-basis: 30%;"></div>
     <div class="flex-cell-base image-container" style="flex-basis: 38%;">
@@ -44,17 +45,25 @@
         </div>
     </div>
 
-    <div class="flex-cell-base title-container"
+    <div class="flex-cell-base title-container colored"
         style="background-image: url(https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/shipping.svg?sanitize=true);">
         <h2>Spedizioni</h2>
     </div>
 
-    <div class="flex-cell-base text-container colored">
-        <p class="text">te lo mandiamo anche in una scatola se vuoi, ma ti costa 5 euri, altrimenti sacchettino e via
+    <div class="flex-cell-base cells-container neutral">
+        <p class="sub-flex-cell-long text">te lo mandiamo anche in una scatola se vuoi, ma ti costa 5 euri, altrimenti sacchettino e via
         </p>
+        <div class="sub-flex-cell">
+            <img src="https://www.davidmorgan.com/shop/images/150_withring_lg6.jpg"
+                alt="ring in the present box">
+        </div>
+        <div class="sub-flex-cell">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/61gFkASO6TL._SX500_.jpg"
+                alt="ring's bag">
+        </div>
     </div>
 
-    <div class="flex-cell-base text-container colored">
+    <div class="flex-cell-base text-container neutral">
         <p class="text">
             La Bottega orafa della famiglia Sella nasce a Lecco nel 1983,
             attualmente vi operano i fondatori Corrado e Margherita Sella e il figlio Federico (
@@ -74,7 +83,7 @@
         <img src="https://i.pinimg.com/originals/52/74/34/52743476f11ac145887d39d269775e05.jpg" alt="The shop">
     </div>
 
-    <div class="flex-cell-long-small">
+    <div class="flex-cell-long-small colored">
         <h2 style="padding: 5% 5%">Altri prodotti della nostra bottega</h2>
     </div>
 
@@ -115,7 +124,7 @@
         </a>
     </div>
 
-    <div class="flex-cell-base title-container"
+    <div class="flex-cell-base title-container neutral"
         style="background-image: url(https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/contacts.svg?sanitize=true);">
         <h2>Contatti</h2>
     </div>
@@ -141,7 +150,7 @@
     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
     .main {
-        width: 1160px;
+        max-width: 1160px;
         margin: 0 auto;
     }
 
@@ -155,13 +164,13 @@
 
     .flex-cell-base {
         min-height: 30em;
-        flex-basis: 49%;
+        flex-basis: 50%;
         align-items: stretch;
     }
 
     .flex-cell-small {
         min-height: 10em;
-        flex-basis: 30%;
+        flex-basis: 33%;
         align-items: stretch;
     }
 
@@ -181,12 +190,22 @@
     }
 
     .sub-flex-cell {
-        flex-basis: 49%;
+        flex-basis: 50%;
+        align-items: stretch;
+    }
+
+    .sub-flex-cell-long {
+        flex-basis: 100%;
         align-items: stretch;
     }
 
     .colored {
         background-color: #ffBBBB;
+        color: #202020;
+    }
+
+    .neutral {
+        background-color: #EEEEEE;
         color: #202020;
     }
 
@@ -235,13 +254,24 @@
         /* border: solid 1px #ff9999; */
     }
 
-    /* for 980px or less
-    @media screen and (max-width: 980px) {
-        #pagewrap {
-            width: 94%;
+    @media screen and (max-width: 800px) {
+
+        .flex-cell-base {
+            min-height: 30em;
+            flex-basis: 100%;
         }
 
-        #content {
+    }
+
+    @media screen and (max-width: 700px) {
+
+        .flex-cell-small {
+            min-height: 10em;
+            flex-basis: 50%;
+        }
+    }
+
+    /*    #content {
             width: 41%;
             padding: 1% 4%;
         }
