@@ -20,7 +20,7 @@ def generate_item_list(info_list):
             for color in group['colors']:
                 item = {
                     'name': group['type'] + size[:2] + color,
-                    'productDescription': group['description'],
+                    'productDescription': group['description'].replace('***size***', size),
                     'suggestedPic1': 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/suggested1.jpg',
                     'suggestedPic2': 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/suggested2.jpg',
                     'suggestedPic3': 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/suggested3.jpg',
