@@ -2,5 +2,9 @@
     "cSpell.ignoreWords": [
         "ebay",
         "sella"
-    ]
+    ],
+    "python.linting.pylintArgs": [
+        "--max-line-length=500"
+    ],
+    "cSpell.diagnosticLevel": "Hint"
 }

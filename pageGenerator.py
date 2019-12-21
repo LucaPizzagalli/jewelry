@@ -1,19 +1,19 @@
-# Given an HTML template, this script generates all the Ebay-pages of the products.
+'''Given an HTML template, this script generates all the Ebay-pages of the products.'''
 
 from pathlib import Path
 
 
 def get_pic(pic_name):
+    '''From the name of an image check if it's present in the folder and return its Url or the Url of a placeholder.'''
     pic_file = Path('images' + pic_name)
     if pic_file.is_file():
-        return 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images' + \
-            pic_name
-    else:
-        print('Missing: ' + pic_name)
-        return 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/placeholder.jpg'
+        return 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images' + pic_name
+    print('Missing: ' + pic_name)
+    return 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/placeholder.jpg'
 
 
 def generate_item_list(info_list):
+    '''From a list of the groups it generates a detailed list of the single products.'''
     item_list = []
     for group in info_list:
         for size in group['sizes']:
@@ -43,6 +43,7 @@ def generate_item_list(info_list):
 
 
 def main():
+    '''The main is just the main, bro.'''
     info_list = [
         {
             'type': 'EarringsPadelli',
@@ -95,7 +96,8 @@ def main():
         page_text = template_text.copy()
         for line_index, line in enumerate(page_text):
             for key in item:
-                page_text[line_index] = page_text[line_index].replace('***' + key + '***', item[key])
+                page_text[line_index] = page_text[line_index].replace(
+                    '***' + key + '***', item[key])
         with open("pages/" + item['name'] + 'Page.html', 'w') as file:
             for line in page_text:
                 file.write(line)
