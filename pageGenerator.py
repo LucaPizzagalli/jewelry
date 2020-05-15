@@ -1,6 +1,7 @@
 '''Given an HTML template, this script generates all the Ebay-pages of the products.'''
 
 from pathlib import Path
+import glob
 
 
 def get_pic(pic_name):
@@ -87,20 +88,25 @@ def main():
         }
     ]
 
-    item_list = generate_item_list(info_list)
+    for filename in glob.glob('images/products/*.jpg'):
+        filename = filename.split('/')[-1]
+        if 'Fiori' in filename and 'Ring' in filename:
+            print(filename)
 
-    with open('pageTemplate.html', 'r') as file:
-        template_text = file.readlines()
+    # item_list = generate_item_list(info_list)
 
-    for item in item_list:
-        page_text = template_text.copy()
-        for line_index, line in enumerate(page_text):
-            for key in item:
-                page_text[line_index] = page_text[line_index].replace(
-                    '***' + key + '***', item[key])
-        with open("pages/" + item['name'] + 'Page.html', 'w') as file:
-            for line in page_text:
-                file.write(line)
+    # with open('pageTemplate.html', 'r') as file:
+    #     template_text = file.readlines()
+
+    # for item in item_list:
+    #     page_text = template_text.copy()
+    #     for line_index, line in enumerate(page_text):
+    #         for key in item:
+    #             page_text[line_index] = page_text[line_index].replace(
+    #                 '***' + key + '***', item[key])
+    #     with open("pages/" + item['name'] + 'Page.html', 'w') as file:
+    #         for line in page_text:
+    #             file.write(line)
 
 
 if __name__ == "__main__":
