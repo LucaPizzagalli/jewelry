@@ -51,10 +51,10 @@ mapping = {
         'combo': [1000, 1000],
     },
     'color-color': {
-        'OG': 'yellow-gold',
-        'OR': 'pink-gold',
-        'RU': 'black-gold',
-        'RB': 'white-gold',
+        'OG': 'yellow',
+        'OR': 'pink',
+        'RU': 'black',
+        'RB': 'white',
     },
     'type-type': {
         'AC': 'anello-argento-padelli-silver-ring',
@@ -103,7 +103,7 @@ def clean_combos_photos():
             if item in existent_items:
                 with Image.open(photo_path) as image:
                     image = image.resize((mapping['view-sizes']['combo'][0], mapping['view-sizes']['combo'][1]))
-                    image.save('./Data/CleanPhotos/Items/' + item + '/' + name + '.jpg')
+                    image.save('./Data/CleanPhotos/Marco/' + item + '/' + name + '.jpg')
 
 
 def clean_items_photos():
@@ -114,6 +114,7 @@ def clean_items_photos():
         photo['items'][item] = {}
         photo_paths = glob(item_path + '*')
         Path('./Data/CleanPhotos/Items/' + item).mkdir(parents=True, exist_ok=True)
+        Path('./Data/CleanPhotos/Marco/' + item).mkdir(parents=True, exist_ok=True)
 
         for photo_path in photo_paths:
             name = photo_path.split('/')[-1].split('.')[0]
@@ -135,7 +136,8 @@ def clean_items_photos():
             with Image.open(photo_path) as image:
                 print(photo_path)
                 image = image.resize((mapping['view-sizes'][view][0], mapping['view-sizes'][view][1]))
-                image.save('./Data/CleanPhotos/Items/' + item + '/' + new_name)
+                image.save('./Data/CleanPhotos/Marco/' + item + '/' + new_name)
+                image.save('./Data/CleanPhotos/Items/' + new_name)
     # print(photo)
 
 
