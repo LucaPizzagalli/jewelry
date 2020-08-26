@@ -84,7 +84,7 @@ def main():
             'sizes': ['12 mm', '14 mm', '20 mm', '30 mm'],
             'prices': [5500, 6000, 6500, 7000],
             'colors': ['yellow', 'pink', 'black', 'white'],
-            'pics': ['oblique', 'box', 'front', 'side', 'back', 'under', 'model1', 'model2', 'model3', 'model4']
+            'pics': ['oblique', 'box', 'front', 'side', 'back', 'under', 'model1', 'model2']
         },
         # {
         #     'type': 'EarringsPadelliOvali',
@@ -112,10 +112,6 @@ def main():
         # }
     ]
 
-    # for filename in glob.glob('images/Items/*.jpg'):
-    #     filename = filename.split('/')[-1]
-    #     if 'Fiori' in filename and 'Ring' in filename:
-    #         print(filename)
 
     item_list = generate_item_list(info_list)
 
