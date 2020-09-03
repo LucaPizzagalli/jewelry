@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="main cells-container">
     <div class="flex-cell-long-small image-container">
-        <img src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/logo.jpg" alt="I Sella logo">
+        <img class="logo" src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/logo.jpg" alt="I Sella logo">
     </div>
 
     <div class="flex-cell-base image-container">
@@ -40,20 +40,20 @@
 
     <div class="flex-cell-base title-container colored"
         style="background-image: url(https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/shipping.svg?sanitize=true), linear-gradient(to top right, #20BF55, #A9E5C0);">
-        <h2>Spedizioni</h2>
+        <h2>Confezionamento &amp; Spedizioni</h2>
     </div>
 
     <div class="flex-cell-base cells-container neutral">
-        <p class="sub-flex-cell-long text">Le spese di spedizione sono di 8€ per spedizioni in Italia, 10€ per l'Europa e variabili per il resto del mondo.<br />
-            Nel prezzo è compreso il sacchetto in yuta. E' invece possibile scegliere il cofanetto regalo per un sovrapprezzo di 5€.
+        <p class="sub-flex-cell-long text" style="padding: 2em 10%">Le spese di spedizione sono di €10 per l' Italia, €20 per l'Europa e variabili per il resto del mondo.<br />
+            Nel prezzo base del prodotto &egrave; compreso il sacchetto in juta. &Egrave; possibile scegliere il cofanetto regalo con un sovrapprezzo di €5.
         </p>
-        <div class="sub-flex-cell">
-            <img src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/box.jpg"
-                alt="ring in the present box">
-        </div>
         <div class="sub-flex-cell">
             <img src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/bag.jpg"
                 alt="ring's bag">
+        </div>
+        <div class="sub-flex-cell">
+            <img src="https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/box.jpg"
+                alt="ring in the present box">
         </div>
     </div>
 
@@ -69,16 +69,15 @@
 
     <div class="flex-cell-base text-container neutral">
         <p class="text">
-            La Bottega orafa della famiglia Sella nasce a Lecco nel 1983,
-            attualmente vi operano i fondatori Corrado e Margherita Sella e il figlio Federico (
+            La bottega orafa della famiglia Sella nasce a Lecco nel lontano 1983, attualmente vi operano i fondatori Corrado e Margherita e il figlio Federico (
             <span class="text-link">
                 <a href="https://www.reverbnation.com/7thbreak">apprezzato</a>
             </span>
             <span class="text-link">
                 <a href="https://www.rockit.it/7thBreak">musicista</a>
             </span>
-            ). Tutti i lavori esposti sono realizzati a mano nel loro atelier.<br />
-            Corrado Sella : orafo e disegno<br />Federico Sella : orafo e disegno<br />Margherita Sella : progettazione
+            ). Tutti i gioielli in vendita sono realizzati a mano nel loro atelier.<br />
+            Corrado Sella : orafo e disegno<br />Federico Sella : orafo e disegno<br />Margherita Piva : progettazione
         </p>
 
     </div>
@@ -161,14 +160,12 @@
     }
 
     .flex-cell-base {
-        min-height: 30em;
         flex-basis: 50%;
         align-items: stretch;
     }
 
     .flex-cell-small {
-        min-height: 10em;
-        flex-basis: 33%;
+        flex-basis: 33.333%;
         align-items: stretch;
     }
 
@@ -178,13 +175,13 @@
 
     .image-link:hover,
     .image-link:focus {
-        transform: scale(1.5);
+        transform: scale(1.2);
         transition: 0.3s;
     }
 
     .flex-cell-long-small {
         min-height: 2em;
-        max-height: 30em;
+        max-height: 24em;
         flex-basis: 100%;
     }
 
@@ -242,11 +239,15 @@
         display: inline-block;
     }
 
+    .logo {
+        height: 75%;
+    }
+
     .text {
         font-family: 'Open Sans', sans-serif;
         font-size: 1.1em;
         line-height: 1.8;
-        padding: 10% 10%;
+        padding: 0px 10%;
     }
 
     h2 {
@@ -261,19 +262,31 @@
     } */
 
     @media screen and (max-width: 800px) {
-
         .flex-cell-base {
-            min-height: 30em;
             flex-basis: 100%;
         }
+        .flex-cell-base.title-container {
+            min-height: 30em;
+        }
+    }
 
+    @media screen and (min-width: 800px) {
+        .flex-cell-base {
+            min-height: 390px;
+            flex-basis: 50%;
+        }
     }
 
     @media screen and (max-width: 700px) {
-
         .flex-cell-small {
-            min-height: 10em;
             flex-basis: 50%;
+        }
+    }
+
+    @media screen and (min-width: 700px) {
+        .flex-cell-small {
+            flex-basis: 33.333%;
+            min-height: 233px;
         }
     }
 
@@ -281,7 +294,6 @@
         position: relative;
         text-decoration: none;
     }
-
 
     .text-link a {
         color: #bb2020;
@@ -309,7 +321,6 @@
     .text-link a:focus {
         color: black;
     }
-
 
     .text-link a:hover::after,
     .text-link a:focus::after {

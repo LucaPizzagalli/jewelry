@@ -80,7 +80,9 @@ def main():
         # },
         {
             'type': 'RingPadelli',
-            'description': 'Anelli diametro ***size*** in lastra d’argento 925 millesimi. Realizzati interamente a mano. Tagliati, sbalzati, spazzolati, sabbiati e rifiniti in base al modello: dorati oro giallo o rosè, rodiati in bianco o bruniti al rutenio. Il gambo dell’anello è aperto così da essere facilmente adattabile a qualsiasi dito.',
+            # 'description': 'Anelli diametro ***size*** in lastra d’argento 925 millesimi. Realizzati interamente a mano. Tagliati, sbalzati, spazzolati, sabbiati e rifiniti in base al modello: dorati oro giallo o rosè, rodiati in bianco o bruniti al rutenio. Il gambo dell’anello è aperto così da essere facilmente adattabile a qualsiasi dito.',
+            
+            'description': 'I Sella Bottega Orafa è lieta di presentare la sua collezione "i Padelli":<br /><br />anelli in argento 925 millesimi, diametro ***size***. Realizzati a mano nella bottega orafa di Lecco; tagliati, sbalzati, spazzolati, sabbiati e rifiniti in base al modello: dorati oro giallo o rosè, rodiati in bianco o bruniti al rutenio. Il gambo dell’anello &egrave; aperto così da essere facilmente adattabile a qualsiasi dito.',
             'sizes': ['12 mm', '14 mm', '20 mm', '30 mm'],
             'prices': [5500, 6000, 6500, 7000],
             'colors': ['yellow', 'pink', 'black', 'white'],
