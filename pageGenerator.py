@@ -52,12 +52,12 @@ def generate_item_list(info_list):
                     'suggestedPic4': 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/suggested4.jpg',
                     'suggestedPic5': 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/suggested5.jpg',
                     'suggestedPic6': 'https://raw.githubusercontent.com/LucaPizzagalli/jewelry/master/images/suggested6.jpg',
-                    'suggestedUrl1': 'https://www.ebay.it/usr/i.sella_bottegaorafa',
-                    'suggestedUrl2': 'https://www.ebay.it/usr/i.sella_bottegaorafa',
-                    'suggestedUrl3': 'https://www.ebay.it/usr/i.sella_bottegaorafa',
-                    'suggestedUrl4': 'https://www.ebay.it/usr/i.sella_bottegaorafa',
-                    'suggestedUrl5': 'https://www.ebay.it/usr/i.sella_bottegaorafa',
-                    'suggestedUrl6': 'https://www.ebay.it/usr/i.sella_bottegaorafa'
+                    'suggestedUrl1': 'https://www.ebay.it/str/bottegaorafaisella',
+                    'suggestedUrl2': 'https://www.ebay.it/str/bottegaorafaisella',
+                    'suggestedUrl3': 'https://www.ebay.it/str/bottegaorafaisella',
+                    'suggestedUrl4': 'https://www.ebay.it/str/bottegaorafaisella',
+                    'suggestedUrl5': 'https://www.ebay.it/str/bottegaorafaisella',
+                    'suggestedUrl6': 'https://www.ebay.it/str/bottegaorafaisella'
                 }
                 for pic_index, view in enumerate(group['pics']):
                     pic_name = '/Items/' + generate_picture_name(group['type'], size, color, view)
