@@ -58,6 +58,7 @@ mapping = {
     },
     'type-type': {
         'AC': 'anello-argento-padelli-silver-ring',
+        'OC': 'orecchini-argento-padelli-silver-earrings',
     }
 }
 
@@ -73,18 +74,17 @@ def clean_combos_photos():
     for photo_path in combo_paths:
         name = photo_path.split('/')[-1].split('.')[0]
         items = []
-        if name[0:2] != 'AC':
-            print('Warining nome sconosciuto a: ' + photo_path)
+        if name[0:2] not in ['AC', 'OC']:
+            print('Warnining nome sconosciuto a: ' + photo_path)
             continue
-
         if name[2:5] == '___':
             for diameter in mapping['diameter-x'].keys():
-                items.append('AC' + diameter)
+                items.append(name[0:2] + diameter)
         elif name[2:5] not in mapping['diameter-x'].keys():
-            print('Warining nome sconosciuto b: ' + photo_path)
+            print('Warnining nome sconosciuto b: ' + photo_path)
             continue
         else:
-            items.append('AC' + name[2:5])
+            items.append(name[0:5])
 
         if name[5:7] == '__':
             new_items = []
@@ -93,7 +93,7 @@ def clean_combos_photos():
                     new_items.append(item + color)
             items = new_items
         elif name[5:7] not in mapping['color-color'].keys():
-            print('Warining nome sconosciuto c: ' + photo_path)
+            print('Warnining nome sconosciuto c: ' + photo_path)
             continue
         else:
             for index, item in enumerate(items):
@@ -119,7 +119,7 @@ def clean_items_photos():
         for photo_path in photo_paths:
             name = photo_path.split('/')[-1].split('.')[0]
             if name not in mapping['number-view'].keys():
-                print('Warining nome sconosciuto: ' + photo_path)
+                print('Warnining nome sconosciuto: ' + photo_path)
                 continue
                 # raise Exception('LUCAERROR: nome sconosciuto: ' + photo_path)
             view = mapping['number-view'][name]
