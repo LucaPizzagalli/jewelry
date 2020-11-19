@@ -29,12 +29,18 @@ mapping = {
         'c': '3c',
         'd': '3d',
         'e': '3e',
+        'f': '3f',
     },
     'diameter-x': {
         '012': '1',
         '014': '2',
-        '020': '4',
-        '030': '5',
+        '020': '3',
+        '030': '4',
+    },
+    'diameter-fiori': {
+        '015': True,
+        '020': True,
+        '030': True,
     },
     'view-sizes': {
         'box': [1600, 1600],
@@ -58,6 +64,7 @@ mapping = {
     },
     'type-type': {
         'AC': 'anello-argento-padelli-silver-ring',
+        'AF': 'anello-argento-fiori-silver-ring',
         'OC': 'orecchini-argento-padelli-silver-earrings',
     }
 }
@@ -74,17 +81,27 @@ def clean_combos_photos():
     for photo_path in combo_paths:
         name = photo_path.split('/')[-1].split('.')[0]
         items = []
-        if name[0:2] not in ['AC', 'OC']:
+        if name[0:2] in ['AC', 'OC']:
+            if name[2:5] == '___':
+                for diameter in mapping['diameter-x']:
+                    items.append(name[0:2] + diameter)
+            elif name[2:5] not in mapping['diameter-x']:
+                print('Warnining nome sconosciuto b: ' + photo_path)
+                continue
+            else:
+                items.append(name[0:5])
+        elif name[0:2] in ['AF']:
+            if name[2:5] == '___':
+                for diameter in mapping['diameter-fiori']:
+                    items.append(name[0:2] + diameter)
+            elif name[2:5] not in mapping['diameter-fiori']:
+                print('Warnining nome sconosciuto b: ' + photo_path)
+                continue
+            else:
+                items.append(name[0:5])
+        else:
             print('Warnining nome sconosciuto a: ' + photo_path)
             continue
-        if name[2:5] == '___':
-            for diameter in mapping['diameter-x'].keys():
-                items.append(name[0:2] + diameter)
-        elif name[2:5] not in mapping['diameter-x'].keys():
-            print('Warnining nome sconosciuto b: ' + photo_path)
-            continue
-        else:
-            items.append(name[0:5])
 
         if name[5:7] == '__':
             new_items = []
@@ -102,7 +119,7 @@ def clean_combos_photos():
         for item in items:
             if item in existent_items:
                 with Image.open(photo_path) as image:
-                    image = image.resize((mapping['view-sizes']['combo'][0], mapping['view-sizes']['combo'][1]))
+                    # image = image.resize((mapping['view-sizes']['combo'][0], mapping['view-sizes']['combo'][1]))
                     image.save('./Data/CleanPhotos/Marco/' + item + '/' + name + '.jpg')
 
 
@@ -135,7 +152,7 @@ def clean_items_photos():
             
             with Image.open(photo_path) as image:
                 print(photo_path)
-                image = image.resize((mapping['view-sizes'][view][0], mapping['view-sizes'][view][1]))
+                # image = image.resize((mapping['view-sizes'][view][0], mapping['view-sizes'][view][1]))
                 image.save('./Data/CleanPhotos/Marco/' + item + '/' + new_name)
                 image.save('./Data/CleanPhotos/Items/' + new_name)
     # print(photo)
